@@ -1,15 +1,15 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "valua"
-version = "0.2.2-2"
+version = "0.2.2-3"
 -- LuaDist source
 source = {
-  tag = "0.2.2-2",
+  tag = "0.2.2-3",
   url = "git://github.com/LuaDist-testing/valua.git"
 }
 -- Original source
 -- source = {
---    url = "git://github.com/Etiene/valua",
+--    url = "https://github.com/sailorproject/valua/releases/download/0.2.2/valua-0.2.2.tar.gz",
 --    tag = "0.2.2"
 -- }
 description = {
@@ -17,7 +17,7 @@ description = {
    detailed = [[
       This module provides tools for validating values, very useful in forms, but also usable elsewhere. It works in appended chains. Create a new validation object and start chaining your test functions.
    ]],
-   homepage = "https://github.com/Etiene/valua", 
+   homepage = "https://github.com/sailorproject/valua", 
    license = "MIT"
 }
 dependencies = {
