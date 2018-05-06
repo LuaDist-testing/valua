@@ -23,6 +23,8 @@ local valua = {}
 
 local tinsert,setmetatable,len,match,tonumber = table.insert,setmetatable,string.len,string.match,tonumber
 local next,type,floor,ipairs = next,type,math.floor, ipairs
+local unpack   = unpack or table.unpack
+local pack     = table.pack or function(...) return { n = select('#', ...), ... } end
 
 -- CORE
 -- Caution, this is confusing
@@ -35,9 +37,8 @@ function valua:new(obj)
 	self.__index = function(t,k)
 		--saves a function named _<index> with its args in a funcs table, to be used later when validating
 		return function(...) 
-			local args = {...}
-			local n = select("#", ...)
-			local f = function(value) return valua['_'..k](value, unpack(args, 1, n)) end
+			local args = pack(...)
+			local f = function(value) return valua['_'..k](value, unpack(args, 1, args.n)) end
 			tinsert(t.funcs,f)
 			return t 
 		end 
@@ -93,7 +94,7 @@ function valua._compare(value,another_value)
 end
 
 function valua._email(value)
-	if not value:match("[A-Za-z0-9%.%%%+%-]+@[A-Za-z0-9%.%%%+%-]+%.%w%w+") then
+	if not value:match("^[%w+%.%-_]+@[%w+%.%-_]+%.%a%a+$") then
   		return false, "is not a valid email address" 
   	end
   	return true
