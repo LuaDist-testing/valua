@@ -1,17 +1,9 @@
--- This file was automatically generated for the LuaDist project.
-
-package = "valua"
-version = "0.2-1"
--- LuaDist source
+package = "Valua"
+version = "0.2.1-1"
 source = {
-  tag = "0.2-1",
-  url = "git://github.com/LuaDist-testing/valua.git"
+   url = "git://github.com/Etiene/valua",
+   tag = "v0.2.1"
 }
--- Original source
--- source = {
---    url = "git://github.com/Etiene/valua",
---    tag = "v0.2"
--- }
 description = {
    summary = "Validation for Lua!",
    detailed = [[
