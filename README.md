@@ -5,7 +5,12 @@ A module for making chained validations. Create your objects, append your tests,
 Originally bundled with Sailor MVC Web Framework, now released as a separated module.
   https://github.com/Etiene/sailor
 
-This module provides tools for validating values, very useful in forms, but also usable elsewhere. It works in appended chains. Create a new validation object and start chaining your test functions. If your value fails a test, it breaks the chain and does not evaluate the rest of it. It returns a boolean and an error string (nil when tests succeeded)
+This module provides tools for validating values, very useful in forms, but also usable elsewhere. It works in appended chains. Create a new validation object and start chaining your test functions. If your value fails a test, it breaks the chain and does not evaluate the rest of it. It returns a boolean and an error string (nil when tests succeeded).
+
+Valua is also available through luarocks
+````
+luarocks install valua
+````
 
 ####Usage
 Example 1 - Just create, chain and use:
@@ -22,13 +27,13 @@ reusable_validation("test!") -- true
 ####Current validation functions
 
   * alnum() - 
-Checks if string is alfanumeric.
+Checks if string is alphanumeric.
   * boolean() - 
 Checks if value is a boolean.
   * compare(another_value) - 
 Checks if value is equal to another value.
   * contains(substr) - 
-Check if a string contains a substring.
+Checks if a string contains a substring.
   * date() or date(format) -  
 Checks if a string is a valid date. Default format is UK (dd/mm/yyyy). Also checks for US and ISO formats.
   * email() - 
@@ -64,4 +69,12 @@ Copyright (c) 2014 Etiene Dalcol
 
 http://etiene.net
 
+http://twitter.com/MulherCerebro
+
 License: MIT
+
+
+
+Inspired by Respect Validation for PHP
+
+https://github.com/Respect/Validation
